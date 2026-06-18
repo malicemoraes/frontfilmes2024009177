@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Filme } from "@/tipos/filme"
 import '@/componentes/FilmeCard/FilmeCard.css';
+import Image from "next/image";
 
 interface FilmeCardProps {
   filme: Filme;
@@ -12,9 +13,13 @@ interface FilmeCardProps {
 export default function FilmeCard({ filme, onDelete}: FilmeCardProps) {
   return (
     <div className="card">
-      <img
+
+      <Image
         src={filme.imagem}
-        alt={filme.titulo}
+        alt={filme.titulo} 
+        width={300}
+        height={450}
+        className="card-img"
       />
 
       <h2>{filme.titulo}</h2>
